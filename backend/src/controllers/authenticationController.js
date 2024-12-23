@@ -19,9 +19,7 @@ export const authController = {
   googleAuth: async (req, res, next) => {
     try {
       const {OAUTH_CLIENT_ID,OAUTH_SECRET} = secrets
-      const { code } = req.query;      
-      console.log(code);
-      
+      const { code } = req.query;        
       const { data } = await axios.post('https://oauth2.googleapis.com/token', {
         client_id: OAUTH_CLIENT_ID,
         client_secret: OAUTH_SECRET,

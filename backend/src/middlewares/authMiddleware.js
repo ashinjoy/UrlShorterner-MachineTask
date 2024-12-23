@@ -1,8 +1,11 @@
-import { verifyToken } from "../utils/jwt";
+import { verifyToken } from "../utils/jwt.js";
 
 export const isAuthenticated = async (req, res, next) => {
   try {
+    console.log(req.cookies);
     const token = req.cookies["accessToken"];
+    console.log(token);
+    
     const isTokenValid = verifyToken(token);
     if (!isTokenValid) {
       const error = new Error("Not Authenticated");
