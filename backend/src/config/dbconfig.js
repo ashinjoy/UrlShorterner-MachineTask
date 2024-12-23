@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import constants from "../constants/secrets.js";
-const { DB_CONNECTION_STRING } = constants;
+import  { secrets } from "../constants/secrets.js";
+const { DB_CONNECTION_STRING } = secrets;
 
 export async function dbConnection() {
   try {
