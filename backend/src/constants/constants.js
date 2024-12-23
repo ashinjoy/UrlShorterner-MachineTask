@@ -1,0 +1,1 @@
+export const GOOGLE_REDIRECT_URI = "http://localhost:3001/api/v1/auth/google/callback" 

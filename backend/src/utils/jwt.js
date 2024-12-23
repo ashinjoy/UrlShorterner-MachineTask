@@ -10,4 +10,15 @@ export const createToken = async (id) => {
     throw error;
   }
 };
+export const verifyToken = async (token) =>{
+  try {
+    const {JWT_SECRET} =  secrets
+
+   const isVerified =  jwt.verify(token,JWT_SECRET)
+   return isVerified
+  } catch (error) {
+    console.error(error);
+    throw error
+  }
+}
 

@@ -5,14 +5,14 @@ export const urlService = {
   createShortUrl: async (longUrl, customAlias) => {
     const { HOSTNAME } = secrets;
     try {
-      let shortUrl;
+      let shortUrl , randomId;
       if (longUrl && customAlias) {
         shortUrl = `http//:${HOSTNAME}/${customAlias}`;
       } else {
-        const randomId = generateRandomId();
+         randomId = generateRandomId();
         shortUrl = `http//:${HOSTNAME}/${randomId}`;
       }
-      return shortUrl;
+      return {shortUrl,randomId};
     } catch (error) {
       console.error(error);
       throw error;

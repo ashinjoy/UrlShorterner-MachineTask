@@ -13,22 +13,26 @@ const urlSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
-    alias:{
-    type:String,
-    require:true
-    } ,
-    totalClicks:{
-        type:Number,
-        default:0
+    alias: {
+      type: String,
+      require: true,
     },
-    uniqueClicks:{
-        type:Number,
-        default:0
-    } 
+    topic: {
+      type: String,
+      default: "general purpose",
+    },
+    totalClicks: {
+      type: Number,
+      default: 0,
+    },
+    uniqueClicks: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-export const urlModel = mongoose.model('url',urlSchema)
+export const urlModel = mongoose.model("url", urlSchema);
